@@ -2,7 +2,6 @@ Functions are a named sequence of instructions that allow us to reuse code in mu
 
 ## Agenda
 
-0. Setting up Atom
 1. What are functions?
 2. How to define a function
 3. Inputs & outputs
