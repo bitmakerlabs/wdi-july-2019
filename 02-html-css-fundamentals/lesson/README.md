@@ -178,3 +178,15 @@ The best single source of truth from a web developer's perspective for both HTML
 
 * [HTML](https://developer.mozilla.org/en/docs/Web/HTML/Element)
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+
+## Resources
+
+* [Mozilla Developer Network: Learn HTML](https://developer.mozilla.org/en-US/learn/html)
+* [CSS Zen Garden](http://www.csszengarden.com/)
+* [A Beginner's Guide to HTML and CSS](http://learn.shayhowe.com/html-css/)
+* [CSS Awards](http://www.cssawards.net/)
+* [HTML5 Doctor](http://html5doctor.com/)
+* [Mozilla Developer Network: Learn CSS](https://developer.mozilla.org/en-US/learn/css)
+* [CSS Diner](http://flukeout.github.io/)
+* [HTML & CSS Workshop Slides](http://slides.com/bitmaker/html-css-workshop-5-23-13-14-1ccc02b6-40ca-4841-bfdc-fd5005674569-18-21)
+* [HTML Color Codes](http://htmlcolorcodes.com/)
