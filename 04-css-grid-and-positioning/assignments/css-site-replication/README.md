@@ -29,13 +29,13 @@ There's a bit of starter code, so you can jump right into it.
 
 #### Starter code
 
-The starter code in this folder contains all the files, images, and text content needed to create the page. The text is in the `index.html`, and the color palette is in `main.css` 
+The starter code in this folder contains all the files, images, and text content needed to create the page. The text is in the `index.html`, and the color palette is in `main.css`
 
 #### Deliverable
 
 Please find a screenshot of the expected result below:
 
-![Instagram lab Screenshot](https://i.imgur.com/DQ9fk1u.png)
+![Final](https://git.generalassemb.ly/wdi-toronto/course_materials/04-css-grid-and-positioning/assignments/css-site-replication/final.png)
 
 ## Additional Resources
 
