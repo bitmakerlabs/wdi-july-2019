@@ -8,3 +8,8 @@ This project contains all of the lesson notes and pre-class code for every Web D
   2. Update your fork as necessary (e.g. remove / rearrange / rename lessons)
   3. Share that repo with the students so they can easily follow along with code examples in class.
   4. Commit your in-class code to the fork and push it so students have access to the final result for reference when reviewing the day's material.
+
+## Issues To Be Resolved
+
+* will all instructors have access to this repo to modify their lessons?
+* need standardized GA hosted platform for example/assignment applications (i.e. API's required by assignments etc)
