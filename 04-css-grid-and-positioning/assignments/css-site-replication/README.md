@@ -35,7 +35,7 @@ The starter code in this folder contains all the files, images, and text content
 
 Please find a screenshot of the expected result below:
 
-![Final](https://git.generalassemb.ly/wdi-toronto/course_materials/04-css-grid-and-positioning/assignments/css-site-replication/final.png)
+![Final](https://raw.git.generalassemb.ly/wdi-toronto/course_materials/master/04-css-grid-and-positioning/assignments/css-site-replication/final.png)
 
 ## Additional Resources
 
