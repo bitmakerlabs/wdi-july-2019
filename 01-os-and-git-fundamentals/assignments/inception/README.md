@@ -51,7 +51,7 @@ Try this:
 $ git add --all
 ```
 
-At the end of the assignment you should have a repository on your GitHub that looks similar to [this one](https://github.com/bitmakerlabs/inception). Take note of the commits.
+At the end of the assignment you should have a repository on your GitHub that looks similar to [this one](https://git.generalassemb.ly/wdi-toronto/inception). Take note of the commits.
 
 ![Inception Commit History](http://i.imgur.com/rDYj6VD.png)
 
