@@ -1,7 +1,7 @@
 These short exercises will help you reinforce the concepts of data types, variables, and conditionals.
 
 ## Prerequisites
-You should have already completed [the first assignment on variables, data types, and conditionals](https://git.generalassemb.ly/wdi-toronto/course-materials/06-programming-fundamentals-part-1/assignments/programming-fundamentals/blob/master/README.md) before moving on to this one.
+You should have already completed [the first assignment on variables, data types, and conditionals](https://git.generalassemb.ly/wdi-toronto/course-materials/blob/master/06-programming-fundamentals-part-1/assignments/programming-fundamentals/README.md) before moving on to this one.
 
 ## Film Recommendations
 
