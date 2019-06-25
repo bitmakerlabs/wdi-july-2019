@@ -1,12 +1,12 @@
-ur journey into programming begins with the fundamentals of any modern programming language: basic data types, variables and flow control. We'll be discussing the why these are fundamental topics to learn as a developer and how you can combine them to write your first programs.
+Our journey into programming begins with the fundamentals of any modern programming language: basic data types, variables and flow control. We'll be discussing the why these are fundamental topics to learn as a developer and how you can combine them to write your first programs.
 
 ## Agenda
-* [What is programming?]
-* [What is Python?]
-* [How to run Python programs]
-* [Basic Data Types]
-* [Variables and assignment]
-* [Control Structures]
+* What is programming?
+* What is Python?
+* How to run Python programs
+* Basic Data Types
+* Variables and assignment
+* Control Structures
 
 ## What is programming?
 * Programming is the process of solving problems through code
@@ -17,7 +17,7 @@ ur journey into programming begins with the fundamentals of any modern programmi
 ### Low-level programming languages
 * Generally interact directly with the hardware layer
 * Requires the developer to manage the resources available on the physical computer through their code
-* Useful when you have very limited resources or are custom embedded systems
+* Useful when you have very limited resources
 * Examples: Assembly, C, C++
 
 ### High-level programming languages
@@ -34,6 +34,7 @@ Python is a programming language. As a programming language, it has the followin
 * Created with readability in mind
 * General purpose: popular for many types of tasks, including web development, scientific computing, numeric data processing, scripting, and even game development
 
+
 ## How To Run Python Programs
 Running Python programs is pretty straightforward
 
@@ -48,18 +49,20 @@ You can also run Python interactively by running just `python` from the commandl
 
 Though this won't let you save your inputs, it's a great way to play around with your code.
 
+Type `ctrl-d` or `exit()` to leave the Python shell and get back to your normal command line prompt.
+
 ## Basic Data Types
 Data Types are the building blocks of programming. They let you define different kinds of data that all have their own special behaviours.
 
 ### Numbers
-* Integers: whole numbers, e.g. `5`
-* Floats: decimal numbers, e.g `5.5` or `0.2`
-* Arithmetic: `+`, `-`, `*`, `/`, `%`
+* Integers: whole numbers, e.g. `5`, `-10`
+* Floats: decimal numbers, e.g `5.5`, `0.2`, `-1.5`
+* Arithmetic: `+`, `-`, `*`, `/`, `%`, `//`, `**`
 * Comparisons: `>`, `<`, `>=`, `<=`, `==`, `!=`
 
 ### String
 * Let us store and manipulate text
-* String interpolation
+* String interpolation with `format`
 * String manipulation methods
 
 ### None
@@ -67,7 +70,9 @@ Data Types are the building blocks of programming. They let you define different
 `None` in Python indicates the absence of a value.  It represents nothingness.
 
 ### Booleans
-Booleans represent "true" or "false".  In Python these are capitalized: `True` and `False`. Every programming language has the concept of true or false at a fundamental level. You can combine true and false values using boolean logic or (logical operations). The two most common logical operators are `and` and `or`.
+Booleans represent "true" or "false".  In Python these are capitalized: `True` and `False`. Every programming language has the concept of true or false at a fundamental level. You can combine true and false values using boolean logic or (logical operations). The two most common logical operators are `and`, `or`, and `not`.
+
+![](https://upload.wikimedia.org/wikipedia/commons/4/4a/Truth_table_for_AND%2C_OR%2C_and_NOT.png)
 
 #### Truthiness and Falsiness
 Beyond the keywords `True` and `False`, most languages have the concept of "truthiness" and "falsiness". These are non-Boolean values that within a language evaluate to true or false, respectively. Understand what evaluates to true and what evaluates to false in a language is usually one of the first things you'll want to know.
@@ -78,6 +83,7 @@ In Python, the only values that are falsey besides `False` are `None`, zero (`0`
 ### Converting between data types
 There are many methods available on each kind of these objects that let you convert them from on type to another
 
+* `bool()`: to boolean
 * `str()`: to string
 * `int()`: to integer
 * `float()`: to float
@@ -87,7 +93,18 @@ int("1")
 str(1)
 float(1)
 ```
- 
+
+### Checking Data Type
+
+Use `type()` to ask what data type you're working with:
+
+```python
+type(8)
+type(8.0)
+type((8 > 7))
+type("Hi")
+```
+
 ## Variables
 Variables  allow us to symbolically name and refer to any data type. They are called variables because we can change the values inside, i.e. the values vary over time.
 
@@ -139,7 +156,7 @@ count = 10
 
 while count >= 0:
   print(count)
-  count = count + 1
+  count = count - 1
 
 ```
 
@@ -151,5 +168,3 @@ You can tell the Python interpreter to ignore lines of code by starting the line
 # this is a comment
 # Python will skip these lines
 ```
-
-

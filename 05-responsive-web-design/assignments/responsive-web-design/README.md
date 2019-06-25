@@ -15,7 +15,7 @@ If you haven't finished the assignments on these topics, it's recommended that y
 * responsive design: viewport meta tag, media queries
 
 ## Setup
-[You'll find the starter code for this assignment in this respository](https://github.com/bitmakerlabs/now-playing-static)
+[You'll find the starter code for this assignment in this respository](https://git.generalassemb.ly/wdi-toronto/now-playing-static)
 
 1. Fork and clone the repository
 2. Don't forget to commit your code frequently when making changes!
