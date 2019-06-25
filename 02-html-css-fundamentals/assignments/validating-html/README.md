@@ -4,7 +4,7 @@ Each of the HTML files provided renders a web page, but has something wrong with
 
 ## Getting started
 
-Get familiar with the html files provided in this folder.
+[Fork and clone this repo](https://git.generalassemb.ly/wdi-toronto/validating-html) containing four HTML files.  Each one renders a web page, but has something wrong with the code.  
 
 ## Exercise
 

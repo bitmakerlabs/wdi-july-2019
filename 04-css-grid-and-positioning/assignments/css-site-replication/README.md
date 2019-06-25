@@ -29,7 +29,8 @@ There's a bit of starter code, so you can jump right into it.
 
 #### Starter code
 
-The starter code in this folder contains all the files, images, and text content needed to create the page. The text is in the `index.html`, and the color palette is in `main.css`
+The [starter-code](https://git.generalassemb.ly/wdi-toronto/css-site-replication)
+) contains all the files, images, and text content needed to create the page. The text is in the `index.html`, and the color palette is in `main.css`  You should start by cloning [this repo](https://git.generalassemb.ly/wdi-toronto/css-site-replication).
 
 #### Deliverable
 

@@ -8,7 +8,7 @@
 
 Your assignment is to use your CSS knowledge so far, including selectors, display properties, and dev tools to recreate the following design:
 
-![](https://s3.amazonaws.com/bitmakerhq/resources/web-development/display-property-example-layout.png)
+![](https://raw.git.generalassemb.ly/wdi-toronto/course_materials/master/03-box-model-dev-tools/assignments/layout-with-blocks/final.png)
 
 ## Getting started
 

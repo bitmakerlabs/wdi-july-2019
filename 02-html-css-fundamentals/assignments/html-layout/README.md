@@ -10,7 +10,7 @@
 
 For this assignment you'll make a new project and repository.
 
-1. Navigate to the folder where you keep your Bitmaker projects (e.g. `~/Desktop/bitmaker/projects`)
+1. Navigate to the folder where you keep your General Assembly projects (e.g. `~/Desktop/ga/projects`)
 2. Create a new folder for your project (`mkdir html-layout`)
 3. Change directories into your new project folder (`cd html-layout`)
 4. Initialize your new git repository (`git init`)

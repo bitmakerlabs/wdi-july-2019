@@ -11,7 +11,23 @@
 
 ## Getting started
 
-The files you will need are in this folder: index.html and styles.css
+You'll need to **fork** the following repository onto your GitHub account.
+
+1. Visit this link: https://git.generalassemb.ly/wdi-toronto/css-selectors
+2. Click the "Fork" button at the top right
+
+This will make a copy of the repository your account.
+
+From there, you'll want to **clone** that repository to your computer.
+
+1. Click on the green "Clone or download" button
+2. Copy the URL in the box that appears
+3. Switch to your Terminal window
+4. Navigate to the folder where you keep your General Assembly projects (e.g. `~/Desktop/ga/projects`)
+5. Type `git clone <paste the URL you copied here>` and hit enter
+6. Change directories into your newly cloned project folder (`cd css-selectors`)
+7. Open the `index.html` file by double clicking
+8. Go to your browser, `cmd-o` (mac) / `ctrl-o` (linux) to open `index.html` in your browser
 
 ## Instructions
 

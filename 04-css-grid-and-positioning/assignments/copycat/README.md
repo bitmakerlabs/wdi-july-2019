@@ -18,7 +18,7 @@ At this point, we've covered quite a few topics:
 One really great way to improve your skills is to analyze other people's sites and try to replicate it as close as possible.
 
 **Putting together all the concepts we've been exposed to thus far, we should be able to recreate the layout of the following site:**  
-http://bitmakerlabs.github.io/fed-copycat/
+https://pages.git.generalassemb.ly/wdi-toronto/copycat/
 
 
 ---
@@ -26,7 +26,7 @@ http://bitmakerlabs.github.io/fed-copycat/
 ### Getting Started
 
 #### Step 1: Create your project folder
-1. In the projects folder where you save all your Bitmaker work, create a new folder called `copycat-assignment`
+1. In the projects folder where you save all your General Assembly work, create a new folder called `copycat-assignment`
 2. Open the`copycat-assignment` project folder in your editor
 
 #### Step 2: Create your `index.html` file
@@ -71,7 +71,7 @@ If the `styles.css` file wasn't saved inside of the `css` folder, we can easily 
 
 #### Step 4: Verify your file/folder structure
 Your file/folder structure should look similar to this
-![Image of Project Folder Structure](https://s3.amazonaws.com/bitmakerhq/lessons/front-end-development/resources/folder-structure.png)  
+![Image of Project Folder Structure](https://raw.git.generalassemb.ly/wdi-toronto/course_materials/master/04-css-grid-and-positioning/assignments/copycat/folder-structure.png)  
 
 ---
 
@@ -79,7 +79,7 @@ Your file/folder structure should look similar to this
 ### Copycat-ing!
 Now that we have our base files and folders set up, let's start copycat-ing :)!  
 **We highly encourage exploring the site with your Developer Tools**  
-http://bitmakerlabs.github.io/fed-copycat/
+https://pages.git.generalassemb.ly/wdi-toronto/copycat/
 
 #### Not sure how to get started?
 1. Analyze the content on the page

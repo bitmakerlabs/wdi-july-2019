@@ -13,9 +13,11 @@ We're just going play around with some basic positioning rules to ensure that we
 
 ### Getting Started
 
-[The starter code for this assignment can be found in this folder
+[The starter code for this assignment can be found here in the part 1 directory](https://git.generalassemb.ly/wdi-toronto/css-positioning)
 
-The goal is to make your final version look like the final image in this folder called final.png.
+The goal is to make your final version look like mine:
+
+![Final Version](https://raw.git.generalassemb.ly/wdi-toronto/course_materials/master/04-css-grid-and-positioning/assignments/intro-to-css-positioning/final.png)
 
 ### Tasks
 1. Make all the positioning for the boxes relative to the div with class `container`
