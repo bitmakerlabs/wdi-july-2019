@@ -7,7 +7,9 @@ Introduction to objects and classes, what they are, why we use them, how to code
 * OOP Theory
   * What is an object
   * What is a class
+  * Why OOP?
 * OOP in Python
+
 
 
 ## OOP Theory
@@ -22,14 +24,12 @@ Introduction to objects and classes, what they are, why we use them, how to code
 
 ## OOP in Python
 
-* Implement `Person` class
-* Instantiating instances of `Person`
-* Properties
+* Implement a class
+* Instantiating/making instances/making objects out of that class
+* Properties / instance variables
   * `my_person.name`
   * `my_person.name = 'new name'`
 * Instance methods
   * `def my_method(self):`
 * `self`
 * `__init__()`
-
-
