@@ -17,6 +17,7 @@ tablet to desktop.
 - Devices of all different sizes makes responsive design incredibly useful
 - Instead of creating new sites or custom views specific for mobile
 - Use CSS to adjust the layout of the site to accommodate different devices
+- Responsive vs adaptive design
 
 
 ## Meta viewport
