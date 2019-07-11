@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="slides.js"></script>
+    <style type="text/css">
+
+      @import url(slides.css);
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+## *Today's Lesson*
+
+# Collections and Iteration
+---
+
+
+# Agenda
+
+### review yesterday's lesson
+
+### lists
+
+### iteration
+
+### dictionaries
+
+### sets
+
+### ranges
+---
+
+
+# Any questions on yesterday's lesson?
+
+### functions and methods:
+- builtins, functions and methods
+- calling
+- arguments
+- defaults
+- variable length number of arguments
+- return values
+---
+layout: true
+
+# How collections and iteration fit into the overall course
+---
+
+--
+
+### Week 1: Git, HTML, CSS
+
+--
+
+## Week 2 (this week!):
+  Previously: data types, variables, flow control<br>
+--
+  Yesterday: functions and methods<br>
+--
+  ***Today!: collections and iteration***<br>
+--
+  Ttomorrow: problem solving<br>
+--
+  Next day: Objected Oriented Programming (OOP)<br>
+
+--
+
+### Week 3 and beyond:<br>
+OOP, Debugging, Databases, Data-Modelling, Frameworks, Templating, Request-Response, Project Planning, APIs, Testing, JavaScript, React
+---
+
+Collections and iteration are a fundamental part of programming, and it's likely you'll use them in almost all future programs you write.
+---
+layout: false
+
+
+# Transit Planner
+
+We'll explore collections and iteration through a handy transit planner.
+---
+layout: true
+# Fare Calculator
+---
+
+### Requirements
+
+Create a function that accepts a *list* of passengers and returns the total fare.
+
+### Prices
+
+<pre>
+Adult:   3.25<br>
+Student: 2.10<br>
+Senior:  2.10<br>
+Child:   Free<br>
+</pre>
+---
+layout: true
+
+<small>Requirement: create fare calculator function</small>
+
+----
+---
+
+First Step: Create an empty list to store passengers and assign it to a variable.
+
+--
+
+### Code
+
+--
+
+```py
+passengers = []
+```
+---
+
+Add one of each type of passenger type to the list using `append` <small>(adult, student, senior, child)</small>.
+
+--
+
+### Code
+
+--
+
+```py
+passengers.append('adult')
+passengers.append('student')
+passengers.append('senior')
+passengers.append('child')
+
+print(passengers)
+```
+---
+
+Create a function called `calculate_total_fare` that accepts a list of passengers and returns the total fare.
+
+For now, leave the body of the function empty.
+
+--
+
+### Code
+
+--
+
+```py
+def calculate_total_fare(passengers):
+  pass
+
+# -- snip --
+
+total = calculate_total_fare(passengers)
+
+print(f'Total fare: {total}')
+
+```
+---
+
+Iterate through the list to find the total fare using a for loop.
+
+For now let's not worry about prices and charge everyone $1
+
+### Code
+
+--
+
+```py
+def calculate_total_fare(passengers):
+
+  total = 0
+
+  for passenger in passengers:
+    total += 1
+
+  return total
+```
+---
+
+Add `if` and `elif` statements to calculate appropriate amount for each type of passenger.
+
+--
+
+### Code
+
+--
+
+```py
+def calculate_total_fare(passengers):
+
+  total = 0
+
+  for passenger in passengers:
+    total += 1
+    if passenger == 'adult':
+      total += 3.25
+    elif passenger == 'student':
+      total += 2.10
+    elif passenger == 'senior':
+      total += 2.10
+    elif passenger == 'child':
+      pass
+
+  return total
+```
+---
+
+Format the total to two decimal places using `{:.2f}` along with the `format` string method.
+
+--
+
+### Code
+
+--
+
+```py
+formatted_total = '{:.2f}'.format(total)
+
+print(formatted_total)
+```
+---
+
+Requirement fulfilled!
+---
+layout: false
+
+Each item in the list is accessible through its `index`.
+
+--
+
+Indexes start at `0` (for the first item in the list) and go up consecutively.
+
+--
+
+Access Each item in the list using `[index #]` beside the variable name.
+
+--
+
+### Code
+
+--
+
+```py
+passengers[0]
+passengers[1]
+passengers[2]
+passengers[3]
+```
+---
+
+Try retrieving an item by `index` that's beyond the last item.
+
+--
+
+### Code
+
+--
+
+```py
+passengers[4]
+```
+
+--
+
+What happened?
+---
+
+## New requirement: Remove senior
+
+It turns out the senior doesn't want to travel with the group any longer.
+
+Let's remove them with `pop` and the `index` of the senior.
+
+--
+
+### Code
+
+--
+
+```py
+passengers.pop(2)
+```
+---
+
+## New requirement: Add two more adults
+
+Your turn:
+
+Use `append` to add the new adults to the list.
+
+--
+
+### Code
+
+--
+```py
+passengers.append('adult')
+passengers.append('adult')
+```
+---
+
+## New requirement: add new child beside existing child
+
+Another child wants to join, but wants to sit next to the first child.
+
+Use `insert(position, item)` to insert the child at a particular index in the list.
+
+--
+
+### Code
+
+--
+
+```py
+passengers.insert(2, 'child')
+```
+---
+
+## New requirement: orderly fare inspector
+
+The fare inspector wants to ensure everyone has paid their fare and is asking everyone to line up alphabetically by passenger type.
+
+Use `sorted(list)` to return the list sorted, but not mutate the list.
+
+Use `list.sort()` to sort list in place (and return `None`)
+
+--
+
+### Code
+
+--
+
+```py
+sorted(passengers) # returns the list sorted, but doesn't modify the original
+
+passengers.sort()  # modifies the original list, and then returns None
+```
+---
+
+## New requirement: unreasonable fare inspector
+
+
+The fare inspector doesn't like this order and wants everyone to line up in the opposite order.
+
+Use `list(reversed(list))` to return the list reversed, but not mutate the list.
+
+Use `list.reverse()` to reverse list in place (and return `None`)
+
+--
+
+### Code
+
+--
+
+```py
+list(reversed(passengers)) # returns the list reversed, but doesn't modify the original
+
+passengers.reverse()       # reverses the original list, and then returns None
+```
+---
+
+Oh no! It looks like the second and third passengers don't have a Proof-of-Payment
+
+Let's find out who they are using a `slice[slice_start:slice_end]`
+
+`slice_start` is the index of the beginning of the slice.
+
+`slice_end` is the index following the end of the slice.
+
+### Code
+
+--
+
+```py
+print(passengers[1:3])
+```
+---
+layout: true
+
+# Dictionaries
+---
+
+### A data type that stores key-value pairs
+
+Create them with `{}`
+---
+
+### Create a few example stations and what lines they're on
+
+```py
+stations = {}
+
+stations['Finch']       = 'line 1'
+stations['Main Street'] = 'line 2'
+stations['Midland']     = 'line 3'
+stations['Leslie']      = 'line 4'
+
+print(stations)
+```
+---
+
+### What line is Leslie station on?
+
+### Code
+
+--
+
+```py
+stations['Leslie']
+```
+---
+
+Let's import all the stations and their line numbers:
+
+### Code
+
+```
+from data import stations_with_line_numbers
+```
+
+--
+
+... and print them out:
+
+```py
+print(stations_with_line_numbers)
+```
+---
+
+## Let's print them out a little neater:
+
+### Code
+
+
+```py
+for station, line_number in stations_with_line_numbers.items():
+  print(line_number + ': ' + station)
+```
+---
+
+## Let's print out stations that are on line three:
+
+### Code
+
+--
+
+```py
+for station, line_number in stations_with_line_numbers.items():
+  if line_number == 'Line 3':
+    print(station)
+```
+---
+
+## Let's see what lines are available
+
+### Code
+
+--
+```py
+set(stations.values())
+```
+---
+
+## Let's see just the station names
+
+```py
+stations.keys()
+```
+---
+layout: false
+
+# Ranges
+
+- let's print out stations organized by line using a `range`
+---
+
+# Other Exercises
+
+- what stations have bathrooms?
+
+- what stations are accessible?
+
+- what stations have bathrooms and are accessible?
+
+- what stations start with the letter 'B'?
+---
+layout: false
+
+# Wrap-up
+
+What we covered:
+
+- lists
+- iteration
+- dictionaries
+- sets
+- ranges
+    </textarea>
+
+  </body>
+</html>
