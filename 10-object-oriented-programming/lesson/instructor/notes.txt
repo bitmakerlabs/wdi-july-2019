@@ -1,0 +1,36 @@
+Object has 3 parts:
+- Name (Scientific Name)
+
+- States
+  - "Facts" about an objects
+    - Can change, or remain constant
+
+- Behaviours
+  
+
+Advantages of OOP
+
+- Encapsulation
+  - Grouping of related ideas
+  - Allows us to "classify" concepts
+
+- Abstraction
+  - Standardized on Behaviours
+  - Swap out objects and they behave the same
+
+- Information Hiding
+  - In classic OOP
+    - all state is private
+    - access state through behaviours
+  - In Python, exists in a different way
+
+
+- Instance vs Class
+  - Class is like a blueprint
+  - Instance is just one instance of a classic
+  - Basic idea of OOP
+
+- Classification:
+  - The action or process of classifying something according to shared qualities or characteristics.
+
+
