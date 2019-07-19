@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="slides.js"></script>
+    <style type="text/css">
+
+      @import url(slides.css);
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+# Object Oriented Programming
+
+Also known as OOP
+
+## _Part 3: Inheritance and Review_
+---
+
+
+# Agenda
+
+- review debugging
+- review oop so far
+- inheritance
+---
+
+
+# Review Debugging
+
+Any questions on yesterdays debugging class?
+---
+
+
+# Review OOP
+
+Any questions on OOP?
+---
+
+
+# Inheritance
+
+In OOP, classes can be created based on other classes.
+
+A class based on another class is called a subclass or child class.
+
+The class the subclass was based on is called a parent class or superclass.
+
+Child classes have all the methods and attributes of their parents.
+
+Child classes can overwrite the methods of their parent classes.
+
+Inheritance can be used to keep code "DRY", e.g. "Don't Repeat Yourself".
+
+Inheritance, when not done correctly, can cause code to become coupled and can be difficult to main or understand.
+---
+
+
+In a not very scientific hierarchy chart of life, imagine each class having the attributes of its parents, plus its own that make it unique.
+
+<pre style='font-family: Courier; font-size: 15px;'>
+
+                                            Life
+                                             |
+     ----------------------------------------------------------------------------
+     |                                       |                                  |
+   Plant                                   Animal                             Insect
+     |                                       |                                  |
+ ---------                     ---------------------------                  ---------
+ |       |                     |                         |                  |       |
+Tree    Bush                  Dog                       Cat              Spider    Ant
+                               |                         |
+                     --------------------       -----------------
+                     |         |        |       |               |
+                 Greyhound   Poodle   Husky    Long Hair    Short Hair
+
+</pre>
+
+<br><br>
+
+<table>
+  <tr><th>Class</th><th>Methods</th></tr>
+  <tr><td>Life</td><td>breath, consume</td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td>Animal</td><td>breath, consume, move</td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td>Cat</td><td>breath, consume, move, meow</td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td>Long Hair</td><td>breath, consume, move, meow, shed</td></tr>
+</table>
+---
+
+
+# Exercise: Dog classes
+
+Create a `Dog` class  with three methods:
+
+`__init__`: accepts and sets the name of the dog
+
+`make_sound`: prints out "woof"
+
+`eat`: print out "(dog name) eats some food"
+
+Create three child classes: `Greyhound`, `Husky`, and `Poodle`
+
+For the `Poodle`, have it make the sound `yip`.
+
+For the `Greyhound`, have it eat `a lot` of food.
+---
+
+
+# Exercise: Life
+
+Create a `Life`, and child classes for `Plant`, `Animal` and `Insect`.
+
+On `Life`, create an `__init__` method that accepts and sets the `type`.
+
+Also on `Life`, create a `describe` method that just prints out `(type) is okay`.
+
+On the child classes, overwrite the `describe` methods with the following:
+
+`Plant`: "(type) is nice to look at"
+
+`Animal`: "(type) is cuddly"
+
+`Insect`: "(type) is creepy"
+
+Create some instances of each class and call the `describe` method on each.
+---
+
+
+# "is a" vs "has a"
+
+When structuring your program using inheritance, it's good to ask if the relationship between parent and child is an "is a" or a "has a" relationship.
+
+"is a" relationships are good candidates for inheritance, where as with a "has a", inheritance is likely not an ideal solution.
+
+For example:
+
+A Car "is a" Vehicle.
+
+A Car "has" Wheels.
+
+In this situation, Car inheriting from Vehicle makes sense, but inheriting from Wheel does not.
+---
+
+
+# "is a" vs "has a"
+
+Another example:
+
+"Checkings Account" and "Savings Account" could inherit from "Account", but a "Transaction" would be it's own independent class and neither a parent nor child of any type of "Account".
+---
+
+
+# Super
+
+Calling `super` passes flow control to the parent class.
+
+The syntax is:
+
+`super().__init__(var1, var2)`
+---
+
+
+# Exercise: Shopping Cart
+
+Create a `Product` class and a `Book` subclass.
+
+The product class should keep track of the name and price, and set the tax to 10% (0.10).
+It should have a total method that includes the price and tax.
+
+The Book subclass should call super in the `__init__` method. As well, it should overwrite the tax with 0%.
+
+Create a `shopping_cart` array and add a few items and print the total out.
+---
+
+
+# Exercise: Create more products
+
+Create some more children of products: `Food` (5% tax) and `Pet` (20% tax).
+---
+
+
+# Exercise: Report
+
+Create a `Report` class that accepts a title, author, intro, data and summary.
+
+Create child classes for:
+
+- a Plain Text Report
+-  HTML Report
+- CSV File
+---
+
+
+# Multiple Inheritance
+
+In Python, a class can inherit from multiple classes.
+---
+
+
+# Wrap-up
+
+- inheritance
+- super
+- https://learnrubythehardway.org/book/ex44.html
+    </textarea>
+
+  </body>
+</html>
