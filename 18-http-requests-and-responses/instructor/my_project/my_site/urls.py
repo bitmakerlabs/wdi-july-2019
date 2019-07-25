@@ -15,13 +15,16 @@ Including another URLconf
 """
 
 from datetime import datetime
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import path
 
 def hello(request):
     response = render(request, 'hello.html')
     return HttpResponse(response)
+
+def bonjour(request):
+    return HttpResponseRedirect('/hello/')
 
 def goodbye(request):
     return HttpResponse('Goodbye Dave')
@@ -40,5 +43,6 @@ def todo_list(request):
 urlpatterns = [
     path('hello/', hello),
     path('goodbye/', goodbye),
+    path('bonjour/', bonjour),
     path('todo_list/', todo_list),
 ]
