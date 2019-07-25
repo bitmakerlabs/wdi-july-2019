@@ -15,14 +15,17 @@ Including another URLconf
 """
 
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.urls import path
 
 def hello(request):
-    return HttpResponse('<html><h1>Hello Dave</h1></html>')
+    response = render(request, 'hello.html')
+    return HttpResponse(response)
 
 def goodbye(request):
     return HttpResponse('Goodbye Dave')
 
+# Route
 urlpatterns = [
     path('hello/', hello),
     path('goodbye/', goodbye)
