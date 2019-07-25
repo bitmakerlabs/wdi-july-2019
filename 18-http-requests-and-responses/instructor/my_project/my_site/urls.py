@@ -14,35 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from datetime import datetime
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
 from django.urls import path
-
-def hello(request):
-    response = render(request, 'hello.html')
-    return HttpResponse(response)
-
-def bonjour(request):
-    return HttpResponseRedirect('/hello/')
-
-def goodbye(request):
-    return HttpResponse('Goodbye Dave')
-
-def todo_list(request):
-    context = {
-        'name': 'Eden',
-        'current_time': datetime.now(),
-        'profile_pic_url': 'https://cataas.com/cat',
-        'todo_list': ['Feed cat', 'Go to gym', 'Call girlfriend', 'Eat lunch']
-    }
-    response = render(request, 'todo_list.html', context)
-    return HttpResponse(response)
+from my_site import views
 
 # Route
 urlpatterns = [
-    path('hello/', hello),
-    path('goodbye/', goodbye),
-    path('bonjour/', bonjour),
-    path('todo_list/', todo_list),
+    path('hello/', views.hello),
+    path('goodbye/', views.goodbye),
+    path('bonjour/', views.bonjour),
+    path('todo_list/', views.todo_list),
 ]
