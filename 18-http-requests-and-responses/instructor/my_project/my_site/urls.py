@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from datetime import datetime
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import path
@@ -25,8 +26,17 @@ def hello(request):
 def goodbye(request):
     return HttpResponse('Goodbye Dave')
 
+def todo_list(request):
+    context = {
+        'name': 'Eden',
+        'current_time': datetime.now()
+    }
+    response = render(request, 'todo_list.html', context)
+    return HttpResponse(response)
+
 # Route
 urlpatterns = [
     path('hello/', hello),
-    path('goodbye/', goodbye)
+    path('goodbye/', goodbye),
+    path('todo_list/', todo_list),
 ]
