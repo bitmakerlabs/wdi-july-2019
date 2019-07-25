@@ -14,8 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from django.http import HttpResponse
 from django.urls import path
 
-urlpatterns = [
+def hello(request):
+    return HttpResponse('<html><h1>Hello Dave</h1></html>')
 
+def goodbye(request):
+    return HttpResponse('Goodbye Dave')
+
+urlpatterns = [
+    path('hello/', hello),
+    path('goodbye/', goodbye)
 ]
