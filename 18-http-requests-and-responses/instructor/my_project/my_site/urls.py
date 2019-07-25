@@ -29,7 +29,9 @@ def goodbye(request):
 def todo_list(request):
     context = {
         'name': 'Eden',
-        'current_time': datetime.now()
+        'current_time': datetime.now(),
+        'profile_pic_url': 'https://cataas.com/cat',
+        'todo_list': ['Feed cat', 'Go to gym', 'Call girlfriend', 'Eat lunch']
     }
     response = render(request, 'todo_list.html', context)
     return HttpResponse(response)
