@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contacts Index</title>
+  </head>
+  <body>
+    <h1>Contacts</h1>
+
+    <ul>
+      {% for contact in contacts %}
+        <li>
+          <p>{{ contact.full_name }}</p>
+          <p>{{ contact.email }}</p>
+          <p>{{ contact.note }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+
+  </body>
+</html>
