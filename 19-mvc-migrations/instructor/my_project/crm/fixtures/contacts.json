@@ -1,0 +1,43 @@
+[
+  {
+    "model": "crm.contact",
+    "pk": 1,
+    "fields": {
+      "first_name": "Clark",
+      "last_name": "Kent",
+      "email_address": "clark@dailyplanet.com",
+      "note": "Runs into the phone booth a lot"
+    }
+  },
+  {
+    "model": "crm.contact",
+    "pk": 2,
+    "fields": {
+      "first_name": "Bruce",
+      "last_name": "Wayne",
+      "email_address": "bruce@wayne-enterprises.com",
+      "note": "really really rich"
+    }
+  },
+  {
+    "model": "crm.contact",
+    "pk": 3,
+    "fields":
+    {
+      "first_name": "Diana",
+      "last_name": "Prince",
+      "email_address": "diana@amazon.com",
+      "note": ""
+    }
+  },
+  {
+    "model": "crm.contact",
+    "pk": 4,
+    "fields": {
+      "first_name": "Barry",
+      "last_name": "Allen",
+      "email_address": "barry@ccpd.gov",
+      "note": "disappears a lot"
+    }
+  }
+]
