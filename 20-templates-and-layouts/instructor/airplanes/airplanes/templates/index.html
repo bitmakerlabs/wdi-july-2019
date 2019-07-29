@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <h1>List of Airplanes</h1>
+  <ul>
+  {% for airplane in airplanes %}
+    <li><a href="/airplanes/{{ airplane.pk }}">{{ airplane }}</a></li>
+  {% endfor %}
+  </ul>
+{% endblock  %}
+
