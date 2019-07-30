@@ -10,10 +10,14 @@
 
     <ul>
     {% for plane in airplanes %}
-      <li><a href="/airplanes/{{ plane.pk }}">{{ plane }}</a></li>
+      <li><a href="/airplanes/{{ plane.pk }}">{{ plane }}</a> ( <a href="/airplanes/{{ plane.pk }}/edit">Edit</a> | <a href="/airplanes/{{ plane.pk }}/delete">Delete</a> )</li>
     {% endfor %}
     </ul>   
   </div> 
+
+  <div>
+    <a href="/airplanes/new">New Airplane</a>
+  </div>
 {% endblock %}
 
 

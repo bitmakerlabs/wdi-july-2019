@@ -18,8 +18,12 @@ from django.urls import path
 from airplanes import views
 
 urlpatterns = [
-    path('', views.index),
-    path('airplanes', views.index), # List of all airplanes
-    path('airplanes/<int:id>', views.show), # Show a particular airplane
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path("", views.index),
+    path("airplanes/", views.all),
+    path('airplanes/new', views.new),
+    path('airplanes/create', views.create),
+    path("airplanes/<int:id>/update", views.update),
+    path("airplanes/<int:id>", views.show),
+    path("airplanes/<int:id>/edit", views.edit)
 ]
