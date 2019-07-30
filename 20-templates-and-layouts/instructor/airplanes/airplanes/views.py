@@ -24,8 +24,12 @@ def new(request):
 
 def create(request):
   form = AirplaneForm(request.POST)
-  form.save()  
-  return HttpResponseRedirect('/airplanes')
+  if form.is_valid():
+    form.save()
+    return HttpResponseRedirect("/airplanes")
+  else:
+    context = {"form": form}
+    return render(request, 'form.html', context)  
 
 def edit(request, id):
   airplane = Airplane.objects.get(pk=id)
@@ -37,5 +41,9 @@ def edit(request, id):
 def update(request, id):
   airplane = Airplane.objects.get(pk=id)
   form = AirplaneForm(request.POST, instance=airplane)
-  form.save()
-  return HttpResponseRedirect("/airplanes")
+  if form.is_valid():
+    form.save()
+    return HttpResponseRedirect("/airplanes")
+  else:
+    context = {"form": form, "airplane": airplane, "message": "Update Airplane"}
+    return render(request, 'form.html', context)
