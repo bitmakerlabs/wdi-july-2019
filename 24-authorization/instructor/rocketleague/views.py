@@ -4,9 +4,9 @@ from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from django.shortcuts import redirect
 
 from rocketleague.models import Game, GameForm
-
 
 def index(request):
     games = Game.objects.all()
@@ -19,6 +19,7 @@ def index(request):
 
 @login_required
 def new(request):
+    # if request.user.has_perm('rocketleague.add_game'):
     context = {
         'form': GameForm(),
     }
@@ -30,7 +31,8 @@ def new(request):
 def create(request):
     form = GameForm(request.POST)
     if form.is_valid():
-        new_game = form.save()
+        new_game = form.save(commit=False)
+        new_game.save()
         return HttpResponseRedirect('/')
     else:
         context = { 'form': form }
@@ -150,4 +152,3 @@ cheese -> 8gfd76h58df6th589ds5fg7sdffg0f7834gt
 # def logout_view(request):
 #     logout(request)
 #     return redirect(reverse('home'))
-
