@@ -7,6 +7,7 @@ from django.contrib.auth import login
 from django.shortcuts import redirect
 
 from rocketleague.models import Game, GameForm
+from rocketleague.decorators import user_is_game_creator
 
 def index(request):
     games = Game.objects.all()
@@ -19,12 +20,14 @@ def index(request):
 
 @login_required
 def new(request):
-    # if request.user.has_perm('rocketleague.add_game'):
-    context = {
-        'form': GameForm(),
-    }
-    response = render(request, 'new.html', context)
-    return HttpResponse(response)
+    if request.user.has_perm('rocketleague.add_game'):
+      context = {
+          'form': GameForm(),
+      }
+      response = render(request, 'new.html', context)
+      return HttpResponse(response)
+    else:
+      return redirect(reverse('index'))
 
 
 @login_required
@@ -32,8 +35,9 @@ def create(request):
     form = GameForm(request.POST)
     if form.is_valid():
         new_game = form.save(commit=False)
+        new_game.referee = request.user
         new_game.save()
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect(reverse('index'))
     else:
         context = { 'form': form }
         response = render(request, 'new.html', context)
@@ -47,22 +51,26 @@ def show(request, game_id):
     })
 
 @login_required
+@user_is_game_creator
 def edit(request, game_id):
     game = get_object_or_404(Game, id=game_id)
-    if request.method == 'GET':
-        form = GameForm(instance=game)
-        context = { 'form': form, 'game': game }
-        return render(request, 'edit.html', context)
+    if request.user == game.referee:
+      if request.method == 'GET':
+          form = GameForm(instance=game)
+          context = { 'form': form, 'game': game }
+          return render(request, 'edit.html', context)
 
-    elif request.method == 'POST':
-        form = GameForm(request.POST, instance=game)
-        if form.is_valid():
-            updated_game = form.save()
-            return HttpResponseRedirect(reverse('show', args=[game.id]))
-        else:
-            context = { 'form': form, 'game': game }
-            response = render(request, 'edit.html', context)
-            return HttpResponse(response)
+      elif request.method == 'POST':
+          form = GameForm(request.POST, instance=game)
+          if form.is_valid():
+              updated_game = form.save()
+              return HttpResponseRedirect(reverse('show', args=[game.id]))
+          else:
+              context = { 'form': form, 'game': game }
+              response = render(request, 'edit.html', context)
+              return HttpResponse(response)
+    else:
+      return redirect(reverse('index'))
 
 
 def signup(request):
@@ -78,7 +86,9 @@ def signup_create(request):
     # check if form is valid
     if form.is_valid():
         # if so, create a user
-        new_user = form.save()
+        new_user = form.save(commit=False)
+        new_user.groups.add('referee')
+        new_user.save()
         # !!! @TODO automatically log in user
         login(request, new_user)
         # redirect after successful user creation
