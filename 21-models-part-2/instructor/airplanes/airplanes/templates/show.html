@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ airplane }}</h1>
+
+<p>{{ airplane.description }}</p>
+
+<ul>
+  {% for comment in airplane.comments.all %}
+    <li>{{ comment }}</li>
+  {% endfor %}
+</ul>
+
+<p>
+  <form action="/airplanes/{{airplane.id}}/comments/create" method="post">
+    {% csrf_token %}
+    Comment: <br>
+    <input type="text" name="message">
+    <input type="submit">
+  </form>
+  
+</p>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+<h1>Create New Airplane</h1>
+
+<form action="/airplanes/create" method="post">
+
+  {% csrf_token %}
+
+  {{ form.as_p }}
+
+  <div>
+    <input type="submit" value="SAVE">
+  </div>
+
+</form>
