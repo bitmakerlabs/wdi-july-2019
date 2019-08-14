@@ -18,7 +18,7 @@
   {% if trip.tracks.count %}
     <h4>Total {{ trip.tracks.count }} songs</h4>
     <ul>
-      {% for track in trips.tracks.all %}
+      {% for track in trip.tracks.all %}
       <li>
         <strong>{{ track.artist }}</strong>
         -
