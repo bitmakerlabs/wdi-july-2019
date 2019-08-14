@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{ trip }}
+{% endblock %}
+
+{% block header %}
+  <h1>{{ trip }}</h1>
+{% endblock %}
+
+{% block content %}
+  <a href="/trips">Back</a>
+
+  <h3>The weather is {{ trip.weather }}</h3>
+
+  <h2>Your Playlist</h2>
+
+  {% if trip.tracks.count %}
+    <h4>Total {{ trip.tracks.count }} songs</h4>
+    <ul>
+      {% for track in trips.tracks.all %}
+      <li>
+        <strong>{{ track.artist }}</strong>
+        -
+        {{ track.title }}
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    No songs!
+  {% endif %}
+{% endblock %}

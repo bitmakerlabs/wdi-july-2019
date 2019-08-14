@@ -7,5 +7,7 @@ def index(request):
     response = render(request, 'index.html', context)
     return HttpResponse(response)
 
-# def show(request, pk):
-#     pass
+def show(request, pk):
+    context = { 'trip': Trip.objects.get(pk=pk) }
+    response = render(request, 'show.html', context)
+    return HttpResponse(response)
