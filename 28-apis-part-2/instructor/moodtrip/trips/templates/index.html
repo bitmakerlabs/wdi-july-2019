@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Trips
+{% endblock %}
+
+{% block header %}
+  Trips
+{% endblock %}
+
+{% block content %}
+  <ul>
+    {% for trip in trips %}
+      <li>
+        <a href="/trips/{{ trip.pk }}">
+          {{ trip.location }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
