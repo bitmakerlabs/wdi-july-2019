@@ -2,5 +2,6 @@ from django.urls import path
 from api import views
 
 urlpatterns = [
-  path('', views.index),
+  path('trips/', views.TripList.as_view()),
+  path('trips/<int:pk>', views.TripDetail.as_view()),
 ]

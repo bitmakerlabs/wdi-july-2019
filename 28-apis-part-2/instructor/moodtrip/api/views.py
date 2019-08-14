@@ -1,8 +1,11 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from rest_framework import generics
 from moodtrip.models import Trip
+from api.serializers import TripListSerializer, TripDetailSerializer
 
-def index(request):
-    trips = Trip.objects.all()
-    data = list(trips.values())
-    return JsonResponse(data, safe=False)
+class TripList(generics.ListAPIView):
+    queryset = Trip.objects.all()
+    serializer_class = TripListSerializer
+
+class TripDetail(generics.RetrieveAPIView):
+    queryset = Trip.objects.all()
+    serializer_class = TripDetailSerializer
