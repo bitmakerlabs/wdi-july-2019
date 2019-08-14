@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+  New Trip
+{% endblock %}
+
+{% block header %}
+  <h1>New Trip</h1>
+{% endblock %}
+
+{% block content %}
+  <a href="/trips">Back</a>
+
+  <form action="{{ action }}" method="post">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="">
+      <input type="submit" name="submit" value="Submit">
+    </div>
+  </form>
+{% endblock %}

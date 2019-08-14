@@ -1,3 +1,8 @@
-from django.db import models
+from django.forms import ModelForm
+from moodtrip.models import Trip
 
-# Create your models here.
+class TripForm(ModelForm):
+
+    class Meta:
+        model = Trip
+        fields = ['location']
