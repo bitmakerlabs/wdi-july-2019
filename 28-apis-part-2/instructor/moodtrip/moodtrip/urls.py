@@ -20,5 +20,6 @@ from moodtrip import views
 urlpatterns = [
     path('', views.homepage),
     path('trips/', include('trips.urls')),
+    path('api/', include('api.urls')),    
     path('admin/', admin.site.urls),
 ]
