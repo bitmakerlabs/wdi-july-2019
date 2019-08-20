@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EVENTS!</title>
+    <style>
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      html {
+        box-sizing: border-box;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 24px;
+      }
+
+      h1, h2, h3 {
+        margin-top: 0;
+      }
+
+      #container {
+        height: 5000px;
+        width: 100%;
+        background-color: #ccc;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="container" class="event-block">
+      <button id="btn-0">Prize 1</button>
+      <button id="btn-1">Prize 2</button>
+      <button id="btn-2">Prize 3</button>
+    </div>
+
+    <script>
+      /**  There is a problem with this
+      const prizes = ['A Unicorn!', 'A Hug!', 'Fresh Laundry!'];
+      for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
+        // console.log(btnNum);
+        // For each of our buttons, when the user clicks it...
+ 
+
+        document.getElementById(`btn-${btnNum}`).onclick = () => {
+            console.log(btnNum);
+            alert(prizes[btnNum]);
+        }
+      }
+      */
+
+      const prizes = ['A Unicorn!', 'A Hug!', 'Fresh Laundry!'];
+      for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
+        // console.log(btnNum);
+        // For each of our buttons, when the user clicks it...
+        const closure = function(btnNumber) {
+          return function() {
+            console.log(btnNum);
+            alert(prizes[btnNumber]);
+          }
+        }
+
+        document.getElementById(`btn-${btnNum}`).onclick = closure(btnNum)
+      }
+
+      // console.log(btnNum);
+    </script>
+  </body>
+
+</html>
