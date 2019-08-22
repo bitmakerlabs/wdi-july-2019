@@ -3,11 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Intro to AJAX</title>
+    <!--
+      First we load our JavaScript files, including:
+      - The Axios library, loaded from a content delivery network (CDN).
+      - Our 'ajax.js' file, which contains our program.
+    -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
     <script src="ajax.js" charset="utf-8"></script>
   </head>
   <body>
     <h1>Intro to AJAX</h1>
-    <button id=""></button>
+    <!--
+      Then we add the required HTML elements, including:
+      - 'Get Monsters' button, which will fetch the monster data on click.
+      - 'Post monster' button, which will send our new monster data on click.
+      - 'Monster data' element, which will be display our monster data.
+    -->
+    <button id="get_monsters">Get Monsters</button>
+    <button id="post_monster">Post Monster</button>
+    <div id="monster_data"></div>
   </body>
 </html>
