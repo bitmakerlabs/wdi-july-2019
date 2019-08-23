@@ -28,7 +28,7 @@ def robots_show(request, id):
 def robots_edit(request, id):
   robot = Robot.objects.get(pk=id)
   context = { 'robot': robot, 'action': 'update' }
-  response = render(request, 'form.html', context)
+  response = render(request, 'form_wrapper.html', context)
   return HttpResponse(response)
 
 def robots_update(request, id):
@@ -40,16 +40,22 @@ def robots_update(request, id):
     robot.full_clean()
   except ValidationError as err:
     context = {'robot': robot, 'action': 'update', 'error': err }
-    response = render(request, 'form.html', context)
+    response = render(request, 'form_wrapper.html', context)
     return HttpResponse(response)
   robot.save()
-  return redirect('/')  
+  return redirect('/')
 
 def robots_new(request):
-  robot = Robot()
-  context = { 'robot': robot, 'action': 'create' }
-  response = render(request, 'form.html', context)
-  return HttpResponse(response)
+  if request.is_ajax():
+    robot = Robot()
+    context = { 'robot': robot, 'action': 'create' }
+    response = render(request, 'form.html', context)
+    return HttpResponse(response)
+  else:
+    robot = Robot()
+    context = { 'robot': robot, 'action': 'create' }
+    response = render(request, 'form_wrapper.html', context)
+    return HttpResponse(response)
 
 def robots_create(request):
   robot = Robot()
@@ -60,7 +66,7 @@ def robots_create(request):
     robot.full_clean()
   except ValidationError as err:
     context = {'robot': robot, 'action': 'create', 'error': err }
-    response = render(request, 'form.html', context)
+    response = render(request, 'form_wrapper.html', context)
     return HttpResponse(response)
   robot.save()
   return redirect('/')
