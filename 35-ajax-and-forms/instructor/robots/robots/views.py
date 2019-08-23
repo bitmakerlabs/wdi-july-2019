@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from robots.models import Robot
 from django.core.exceptions import ValidationError
 import pdb
+import json
 
 def robots_index(request):
   context = { 'robots' : Robot.objects.all() }
@@ -59,9 +60,17 @@ def robots_new(request):
 
 def robots_create(request):
   robot = Robot()
-  robot.name = request.POST["name"]
-  robot.model_number = request.POST["model_number"]
-  robot.address = request.POST["address"]
+  print(request.POST)
+  if request.is_ajax():
+    parsed_json = json.loads(request.body)
+    robot.name = parsed_json["name"]
+    robot.model_number = parsed_json["model_number"]
+    robot.address = parsed_json["address"]
+  else:
+    robot.name = request.POST["name"]
+    robot.model_number = request.POST["model_number"]
+    robot.address = request.POST["address"]
+
   try:
     robot.full_clean()
   except ValidationError as err:
@@ -69,7 +78,13 @@ def robots_create(request):
     response = render(request, 'form_wrapper.html', context)
     return HttpResponse(response)
   robot.save()
-  return redirect('/')
+
+  if request.is_ajax():
+    pass
+
+    # send back a JSON response with the new robot
+  else:
+    return redirect('/')
 
 def robots_delete(request, id):
   robot = Robot.objects.get(pk=id)
