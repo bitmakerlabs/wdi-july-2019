@@ -74,6 +74,8 @@ function handleFormSubmit() {
         // create a new robot list item
 
         // append the new robot to the list
+
+        // remove the form
       })
       .catch(error => {
         console.error(error);
