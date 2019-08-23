@@ -15,17 +15,11 @@
     <main>
       <nav>
         <a href="/">All Robots</a> |
-        <a href="/robots/new" id="new-robot-link">New Robot</a>
+        <a href="/robots/new">New Robot</a>
       </nav>
-
-      <div id="robot-form-container"></div>
-
-      <div id="robot-list-container">
-        {% include 'robots.html' %}
-      </div>
-
-      <div id="robot-details-container"></div>
       
+      {% block content %}
+      {% endblock %}
     </main>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>

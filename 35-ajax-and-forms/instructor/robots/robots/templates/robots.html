@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% block content %}
   <section class="robots">
     <div class="robots__container">
@@ -12,5 +13,10 @@
         </article>
       {% endfor %}
     </div>
+
+    <aside class="robots__box">
+      <h2>Robot Details:</h2>
+      <div class="robots__box__details"></div>
+    </aside>
   </section>
 {% endblock %}

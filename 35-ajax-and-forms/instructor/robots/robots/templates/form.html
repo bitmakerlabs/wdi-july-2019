@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% block content %}
 
   <h2>{{ action|capfirst }} Robot</h2>
@@ -17,12 +18,12 @@
 
     <div>
       <label for="name">Model Number</label>
-      <input type="text" name="model_number" value="{{ robot.model_number}}" id="robot-model-number">   
+      <input type="text" name="model_number" value="1">   
     </div>    
 
     <div>
       <label for="name">IP Address</label>
-      <input type="text" name="address" value="{{ robot.address }}" id="robot-address">   
+      <input type="text" name="address" value="{{ robot.address }}">   
     </div>
 
     <div>
