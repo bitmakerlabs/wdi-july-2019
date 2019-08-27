@@ -98,7 +98,6 @@ module.exports = {
   getRandomJunk,
   isCompostable,
   isRecyclable,
-  isGarbage,
   compost,
   recycle,
   toss,
