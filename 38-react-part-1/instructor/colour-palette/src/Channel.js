@@ -12,24 +12,16 @@ import React from 'react';
 //const {key1, key2, key3, key4} = props
 
 const Channel = ({value}) => {
-
-  const handleUp = () => {
-    console.log('+1')
-  }
-
-  const handleDown = () => {
-    console.log('-1')
-  }
-
-  const handleChange = (event) => {
-    console.log(event.target.value)
+  
+  const updateValue = (newValue) => {
+    console.log(`New Value: ${newValue}`)
   }
 
   return (
     <div className="channel">
-      <button type="button" className="btn up" onClick={ handleUp }>+</button>
-      <input type="text" className="txt" value={value} onChange={ handleChange } />
-      <button type="button" className="btn down" onClick={ handleDown }>-</button>
+      <button type="button" className="btn up" onClick={ () => { updateValue(1) } }>+</button>
+      <input type="text" className="txt" value={value} onChange={ (event) => { updateValue(event.target.value) } } />
+      <button type="button" className="btn down" onClick={ () => { updateValue(-1) } }>-</button>
     </div>
   )
 }
