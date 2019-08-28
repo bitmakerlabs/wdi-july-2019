@@ -11,11 +11,11 @@ import React from 'react';
 // --- or ---
 //const {key1, key2, key3, key4} = props
 
-const Channel = ({value}) => {
+const Channel = ({value, handleValueChange}) => {
 
   const updateValue = (newValue) => {
     console.log(`Old Value: ${value}`)
-    value = newValue
+    handleValueChange(newValue)
     console.log(`New Value: ${value}`)
   }
 

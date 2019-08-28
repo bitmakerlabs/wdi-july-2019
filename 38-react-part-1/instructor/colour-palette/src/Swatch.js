@@ -9,6 +9,18 @@ class Swatch extends React.Component {
     b: this.props.blue
   }
 
+  setR = (v) => {
+    this.setState({ r: v })
+  }
+
+  setG = (v) => {
+    this.setState({ g: v })
+  }
+
+  setB = (v) => {
+    this.setState({ b: v })
+  }
+
   render() {
     const style = {
       backgroundColor: `rgb(${this.state.r}, ${this.state.g}, ${this.state.b})`
@@ -17,9 +29,9 @@ class Swatch extends React.Component {
     return (
       <li className="swatch" style={style}>
         <div>rgb(</div>
-        <Channel value={this.state.r} />
-        <Channel value={this.state.g} />
-        <Channel value={this.state.b} />
+        <Channel value={this.state.r} handleValueChange={this.setR} />
+        <Channel value={this.state.g} handleValueChange={this.setG}  />
+        <Channel value={this.state.b} handleValueChange={this.setB}  />
         <div>);</div>
       </li>
     )
