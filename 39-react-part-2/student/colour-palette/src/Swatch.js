@@ -1,28 +1,42 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import Channel from './Channel';
 
-const Swatch = ({red, green, blue}) => {
+class Swatch extends Component {
 
-  // let r = red
-  let [r, setR] = useState(red);  // ===> [orig_value_of_prop, function_to_change_the_prop]
-  let [g, setG] = useState(green);
-  let [b, setB] = useState(blue);
-
-  const style = {
-    backgroundColor: `rgb(${r}, ${g}, ${b})`
+  state = {
+    r: this.props.red,
+    g: this.props.green,
+    b: this.props.blue
   }
 
-  console.log(`Swatch: rgb(${r}, ${g}, ${b})`);
+  setR = (value) => {
+    this.setState({ r: value })
+  }
 
-  return (
-    <li className="swatch" style={style}>
-      <div>rgb(</div>
-      <Channel value={r} handleValueChange={setR} />
-      <Channel value={g} handleValueChange={setG} />
-      <Channel value={b} handleValueChange={setB} />
-      <div>);</div>
-    </li>
-  )
+  setG = (value) => {
+    this.setState({ g: value })
+  }
+
+  setB = (value) => {
+    this.setState({ b: value })
+  }
+
+  render() {
+    const style = {
+      backgroundColor: `rgb(${this.state.r}, ${this.state.g}, ${this.state.b})`
+    }
+
+    return (
+      <li className="swatch" style={style}>
+        <div>rgb(</div>
+        <Channel value={this.state.r} handleValueChange={this.setR} />
+        <Channel value={this.state.g} handleValueChange={this.setG} />
+        <Channel value={this.state.b} handleValueChange={this.setB} />
+        <div>);</div>
+      </li>
+    );
+  }
+
 };
 
 export default Swatch;
