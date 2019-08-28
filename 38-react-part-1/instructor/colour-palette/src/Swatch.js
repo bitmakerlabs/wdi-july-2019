@@ -1,20 +1,29 @@
 import React from 'react';
 import Channel from './Channel';
 
-const Swatch = ({red, green, blue}) => {
-  const style = {
-    backgroundColor: `rgb(${red}, ${green}, ${blue})`
+class Swatch extends React.Component {
+
+  state = {
+    r: this.props.red,
+    g: this.props.green,
+    b: this.props.blue
   }
 
-  return (
-    <li className="swatch" style={style}>
-      <div>rgb(</div>
-      <Channel value={red} />
-      <Channel value={green} />
-      <Channel value={blue} />
-      <div>);</div>
-    </li>
-  )
+  render() {
+    const style = {
+      backgroundColor: `rgb(${this.state.r}, ${this.state.g}, ${this.state.b})`
+    }
+
+    return (
+      <li className="swatch" style={style}>
+        <div>rgb(</div>
+        <Channel value={this.state.r} />
+        <Channel value={this.state.g} />
+        <Channel value={this.state.b} />
+        <div>);</div>
+      </li>
+    )
+  }
 }
 
 export default Swatch;
