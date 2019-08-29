@@ -16,10 +16,17 @@ const App = () => {
       description: "Cozy and clean",
       views: 50
     },
+    {
+      title: "Penthouse $$$",
+      description: "Has a grand piano",
+      views: 500
+    },
   ]
 
   const listingElements = initialListings.map(
-    (listing) => <Listing title={listing.title} description={listing.description} views={listing.views} />
+    //(listing) => <Listing title={listing.title} description={listing.description} views={listing.views} />
+    // --- same as ---
+    (listing) => <Listing {...listing} />
   )
 
   return (
