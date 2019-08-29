@@ -3,7 +3,9 @@ import React from 'react';
 const Channel = ({value, handleValueChange}) => {
 
   const updateValue = (newValue) => {
-    handleValueChange(newValue)
+    const v = parseInt(newValue)
+    if (Number.isInteger(v) && v >= 0 && v <= 255)
+      handleValueChange(v)
   };
 
   return (
