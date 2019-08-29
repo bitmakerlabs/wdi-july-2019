@@ -2,11 +2,19 @@ import React from 'react';
 import Swatch from './Swatch';
 
 const Palette = () => {
+  const initialSwatches = [
+    { red: 255, green: 0, blue: 0 },
+    { red: 0, green: 255, blue: 0 },
+    { red: 0, green: 0, blue: 255 },
+  ]
+
+  const swatchElements = initialSwatches.map(
+    (s, i) => <Swatch key={i} {...s} />
+  )
+
   return (
     <ul className="palette">
-      <Swatch red={55} green={90} blue={200} />
-      <Swatch red={10} green={190} blue={33} />
-      <Swatch red={99} green={4} blue={6} />
+      { swatchElements }
     </ul>
   );
 };
