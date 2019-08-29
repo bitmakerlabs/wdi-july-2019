@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Channel from './Channel';
 
-class Swatch extends Component {
+class Swatch extends React.Component {
 
   state = {
     r: this.props.red,
@@ -9,16 +9,16 @@ class Swatch extends Component {
     b: this.props.blue
   }
 
-  setR = (value) => {
-    this.setState({ r: value })
+  setR = (v) => {
+    this.setState({ r: v })
   }
 
-  setG = (value) => {
-    this.setState({ g: value })
+  setG = (v) => {
+    this.setState({ g: v })
   }
 
-  setB = (value) => {
-    this.setState({ b: value })
+  setB = (v) => {
+    this.setState({ b: v })
   }
 
   render() {
@@ -30,13 +30,12 @@ class Swatch extends Component {
       <li className="swatch" style={style}>
         <div>rgb(</div>
         <Channel value={this.state.r} handleValueChange={this.setR} />
-        <Channel value={this.state.g} handleValueChange={this.setG} />
-        <Channel value={this.state.b} handleValueChange={this.setB} />
+        <Channel value={this.state.g} handleValueChange={this.setG}  />
+        <Channel value={this.state.b} handleValueChange={this.setB}  />
         <div>);</div>
       </li>
-    );
+    )
   }
-
-};
+}
 
 export default Swatch;

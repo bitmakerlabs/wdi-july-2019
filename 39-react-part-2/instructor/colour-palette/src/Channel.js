@@ -2,17 +2,15 @@ import React from 'react';
 
 const Channel = ({value, handleValueChange}) => {
 
-  console.log(`Channel: value: ${value}`);
-
   const updateValue = (newValue) => {
-    handleValueChange(newValue);
+    handleValueChange(newValue)
   };
 
   return (
     <div className="channel">
-      <button type="button" className="btn up" onClick={ () => updateValue(value + 1) } >+</button>
-      <input type="text" className="txt" value={value} onChange={ ({target}) => updateValue(target.value) } />
-      <button type="button" className="btn down" onClick={ () => updateValue(value -1 ) } >-</button>
+      <button type="button" className="btn up" onClick={ () => { updateValue(value+1) } }>+</button>
+      <input type="text" className="txt" value={value} onChange={ (event) => { updateValue(event.target.value) } } />
+      <button type="button" className="btn down" onClick={ () => { updateValue(value-1) } }>-</button>
     </div>
   )
 };
