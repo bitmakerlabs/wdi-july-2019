@@ -9,6 +9,13 @@ const Palette = () => {
     { red: 0, green: 0, blue: 255 },
   ]
 
+  const addSwatch = (s) => {
+    console.log(`Adding a swatch`, s);
+    initialSwatches.push(s)
+
+    console.log(initialSwatches)
+  }
+
   const swatchElements = initialSwatches.map(
     (s, i) => <Swatch key={i} {...s} />
   )
@@ -18,7 +25,7 @@ const Palette = () => {
       <ul className="palette">
         { swatchElements }
       </ul>
-      <Form />
+      <Form onSubmit={ addSwatch }/>
     </>
   );
 };
