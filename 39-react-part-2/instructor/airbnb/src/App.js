@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Listing from './Listing';
 
-const App = () => {
+class App extends Component {
 
-  const initialListings = [
+  initialListings = [
     {
       title: "My Cozy House",
       description: "Clean and modern",
@@ -23,17 +23,39 @@ const App = () => {
     },
   ]
 
-  const listingElements = initialListings.map(
-    //(listing) => <Listing title={listing.title} description={listing.description} views={listing.views} />
-    // --- same as ---
-    (listing, i) => <Listing key={i} {...listing} />
-  )
+  state = {
+    listings: this.initialListings
+  }
 
-  return (
-    <div className="App">
-      { listingElements }
-    </div>
-  );
+  incrementViews = () => {
+    this.setState(
+      (prevState) => {
+        const newListings = prevState.listings.map( (l) => {
+          return {
+            title: l.title,
+            description: l.description,
+            views: l.views + 1
+          }
+        })
+
+        return { listings: newListings }
+      }
+    )
+  }
+
+  render() {
+    const listingElements = this.state.listings.map(
+      (listing, i) => <Listing key={i} {...listing} />
+    )
+
+    return (
+      <div className="App">
+        { listingElements }
+        <hr />
+        <button onClick={this.incrementViews}>+ Views</button>
+      </div>
+    );
+  }
 }
 
 export default App;
