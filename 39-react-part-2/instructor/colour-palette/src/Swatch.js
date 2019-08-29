@@ -28,11 +28,14 @@ class Swatch extends React.Component {
 
     return (
       <li className="swatch" style={style}>
-        <div>rgb(</div>
-        <Channel value={this.state.r} handleValueChange={this.setR} />
-        <Channel value={this.state.g} handleValueChange={this.setG}  />
-        <Channel value={this.state.b} handleValueChange={this.setB}  />
-        <div>);</div>
+        <div className="swatch-controls">
+          <div>rgb(</div>
+          <Channel value={this.state.r} handleValueChange={this.setR} />
+          <Channel value={this.state.g} handleValueChange={this.setG}  />
+          <Channel value={this.state.b} handleValueChange={this.setB}  />
+          <div>);</div>
+        </div>
+        <button className="swatch-cta" onClick={this.props.onRemove}>Remove</button>
       </li>
     )
   }

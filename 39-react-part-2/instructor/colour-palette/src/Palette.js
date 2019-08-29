@@ -26,9 +26,20 @@ class Palette extends Component {
     )
   }
 
+  removeSwatch = (index) => {
+    this.setState(
+      (prevState) => {
+        const newSwatches = prevState.swatches.filter(
+          (_, i) => i !== index
+        )
+        return { swatches: newSwatches }
+      }
+    )
+  }
+
   render() {
     const swatchElements = this.state.swatches.map(
-      (s, i) => <Swatch key={i} {...s} />
+      (s, i) => <Swatch key={i} {...s} onRemove={ () => { this.removeSwatch(i) } } />
     )
 
     return (
