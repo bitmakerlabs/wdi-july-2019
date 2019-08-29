@@ -26,7 +26,7 @@ const App = () => {
   const listingElements = initialListings.map(
     //(listing) => <Listing title={listing.title} description={listing.description} views={listing.views} />
     // --- same as ---
-    (listing) => <Listing {...listing} />
+    (listing, i) => <Listing key={i} {...listing} />
   )
 
   return (
