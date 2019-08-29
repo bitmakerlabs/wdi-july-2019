@@ -37,9 +37,14 @@ class Palette extends Component {
     )
   }
 
+  // Faking a primary key returned by an API
+  primary_key = () => {
+    return Math.floor(Math.random() * 1000000)
+  }
+
   render() {
     const swatchElements = this.state.swatches.map(
-      (s, i) => <Swatch key={i} {...s} onRemove={ () => { this.removeSwatch(i) } } />
+      (s, i) => <Swatch key={ this.primary_key() } {...s} onRemove={ () => { this.removeSwatch(i) } } />
     )
 
     return (
