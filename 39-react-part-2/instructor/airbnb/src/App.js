@@ -30,14 +30,13 @@ class App extends Component {
   incrementViews = () => {
     this.setState(
       (prevState) => {
-        const newListings = prevState.listings.map( (l) => {
-          return {
+        const newListings = prevState.listings.map(
+          (l) => ({
             title: l.title,
             description: l.description,
             views: l.views + 1
-          }
-        })
-
+          })
+        )
         return { listings: newListings }
       }
     )
