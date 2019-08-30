@@ -150,6 +150,6 @@ Library application.
 
 ## Resources
 - [Film Library Exercise: Part 1](https://github.com/bitmakerlabs/react-november-2018/blob/master/03-nested-components-part-2/film-project-part-1.md)
-- [Film Library Exercise: Part 2](https://github.com/bitmakerlabs/react-november-2018/blob/master/03-nested-components-part-2/film-project-part-1.md)
+- [Film Library Exercise: Part 2](https://github.com/bitmakerlabs/react-november-2018/blob/master/06-react-state-part-3/film-project-part-2.md)
 - [Film Library Exercise: Part 3](https://github.com/bitmakerlabs/react-november-2018/blob/master/08-underlying-concepts-part-2/film-project-part-3.md)
 - [Film Library Exercise: Part 4](https://github.com/bitmakerlabs/react-november-2018/blob/master/10-apis-and-heroku-part-2/film-project-part-4.md)
