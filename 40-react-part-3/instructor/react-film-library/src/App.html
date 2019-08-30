@@ -1,0 +1,51 @@
+<section className="film-library">
+  <!-- The FilmList component displays the 'film' and 'fave' data. -->
+  <section className="film-list">
+    <h1 className="section-title">Films</h1>
+
+    <!-- Within the FilmList component, the filters allow the user to switch
+      between viewing 'All' films and 'Fave' films. -->
+    <div className="film-list-filters">
+      <button>
+        All <span>(0)</span>
+      </button>
+      <button>
+        Faves <span>(0)</span>
+      </button>
+    </div>
+
+    <!-- The input field allows users to search for films that contain specific
+      keywords -->
+    <input className="film-list-search" type="text" name="userInput" value="" />
+
+    <!-- Each film is represented by a FilmRow component, which displays the
+      corresponding title, overview, and poster image. The FilmRow component
+      also allows users to add or remove the film from their 'Fave' list. -->
+    <div className="film-row">
+      <figure>
+        <img src="" alt="" className="film-poster" />
+      </figure>
+      <div className="film-summary">
+        <h2>My Film Title</h2>
+        <p>My Film Summary</p>
+        <button>Add to faves</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FilmDetails displays information about the current film. -->
+  <article className="film-details">
+    <h1 className="section-title">Details</h1>
+    <figure className="film-backdrop">
+      <img src="" alt="" />
+      <h1 className="film-title">My Film Title</h1>
+    </figure>
+    <div className="film-meta">
+      <h2 className="film-tagline">My Film Tagline</h2>
+      <p className="film-detail-overview">
+        <img className="film-detail-poster" src="" alt="" />
+        My Film Summary
+      </p>
+    </div>
+  </article>
+</section>
