@@ -33,10 +33,30 @@ export class MarvelService {
   // --------------------------------------------------
   getCharacters(config = {}) {
     console.warn('Whoops, it looks like this method hasn\'t been implemented yet.');
+
+    console.log('__ LOGGING OUT `config`', config);
+
     // TODO:
     // - Create the `params` object.
+    const myRequestParams = {
+      apikey: this.apiKey,
+      ...config,
+    };
+    console.log('__ LOGGING OUT `myRequestParams`', myRequestParams);
+
     // - Extract the correct endpoint from `ENDPOINTS`.
+    const endpoint = MarvelService.ENDPOINTS.characters;
+    console.log('__ LOGGING OUT `endpoint`', endpoint);
+
     // - Dispatch a request using `axios.get()`.
+    console.log('__ MAKING A REQUEST');
+    return axios.get(endpoint, { params: myRequestParams })
+      .then((response) => {
+        console.log('__ RECEIVED RESPONSE DATA');
+        console.log(response);
+        return response.data;
+      });
+
     // - Parse and return the response.
   }
 
