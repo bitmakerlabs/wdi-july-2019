@@ -3,6 +3,8 @@ import './App.css';
 import GamePage from '../GamePage/GamePage'
 import SettingsPage from '../SettingsPage/SettingsPage'
 
+import { Route, Switch } from 'react-router-dom'
+
 const colors = ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD'];
 
 class App extends Component {
@@ -131,17 +133,23 @@ class App extends Component {
     return (
       <div className="App">
         <header className='App-header-footer'>R E A C T &nbsp;&nbsp;&nbsp;  M A S T E R M I N D</header>
-        <GamePage
-          winTries={winTries}
-          colors={colors}
-          guesses={this.state.guesses}
-          handlePegClick={this.handlePegClick}
-          handleScoreClick={this.handleScoreClick}
-          selColorIdx={this.state.selColorIdx}
-          handleColorSelection={this.handleColorSelection}
-          handleNewGameClick={this.handleNewGameClick}
-        />
-        <SettingsPage />
+        <Switch>
+
+          <Route exact path="/" render={ () =>
+            <GamePage
+              winTries={winTries}
+              colors={colors}
+              guesses={this.state.guesses}
+              handlePegClick={this.handlePegClick}
+              handleScoreClick={this.handleScoreClick}
+              selColorIdx={this.state.selColorIdx}
+              handleColorSelection={this.handleColorSelection}
+              handleNewGameClick={this.handleNewGameClick}
+            />
+          } />
+
+          <Route path="/settings" component={SettingsPage} />
+        </Switch>
       </div>
     );
   }
