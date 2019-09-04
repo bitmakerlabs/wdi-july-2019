@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Contact = () => {
+const Contact = (props) => {
   return (
     <>
       <h1>Contact</h1>
-      <p>1-800-MY-TEETH</p>
+      <p>{ props.phone_number }</p>
     </>
   );
 }
