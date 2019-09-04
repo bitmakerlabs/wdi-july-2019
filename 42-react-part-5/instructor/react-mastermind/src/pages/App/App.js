@@ -4,6 +4,7 @@ import GameBoard from '../../components/GameBoard/GameBoard';
 import ColorPicker from '../../components/ColorPicker/ColorPicker';
 import GameTimer from '../../components/GameTimer/GameTimer';
 import NewGameButton from '../../components/NewGameButton/NewGameButton';
+import GamePage from '../GamePage/GamePage'
 
 const colors = ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD'];
 
@@ -133,6 +134,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className='App-header-footer'>R E A C T &nbsp;&nbsp;&nbsp;  M A S T E R M I N D</header>
+
+        <GamePage />
         <div className="flex-h align-flex-end">
           <GameBoard
             colors={colors}
