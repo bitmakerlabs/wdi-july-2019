@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import GamePage from '../GamePage/GamePage'
+import SettingsPage from '../SettingsPage/SettingsPage'
 
 const colors = ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD'];
 
@@ -140,6 +141,7 @@ class App extends Component {
           handleColorSelection={this.handleColorSelection}
           handleNewGameClick={this.handleNewGameClick}
         />
+        <SettingsPage />
       </div>
     );
   }
